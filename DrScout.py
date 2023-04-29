@@ -83,9 +83,7 @@ else:
         with open(pre_file, "r") as f:
             for line in f:
                 prefix.append(line.strip())
-
-    else:
-        print('You entered prefixes, those will be use, type --help for help.')
+            
 if not suffix:
     if suf_file:
         print("You entered no suffix, but a wordfile")
@@ -100,8 +98,6 @@ else:
         with open(pre_file, "r") as f:
             for line in f:
                 suffix.append(line.strip())
-    else:
-        print('You entered suffixes, those will be use, type --help for help.')
 
 print("\n\nGenerating wordlist. Please wait ! \ ")
 time.sleep(0.3)
