@@ -1,6 +1,19 @@
 Welcome on Dr Scout's github page ! 
+
+
+
 Dr Scout is a very simple wordlist generator.
 I'm not python developper just trying to learn some stuff.
+
+
+
+
+
+
+
+
+
+
 
 Usage:
   example: You want to generate a custom wordlist because you lost your password and 
