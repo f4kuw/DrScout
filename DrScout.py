@@ -7,6 +7,7 @@ print("""
             Welcome with Dr. Scout ! Give me keywords and a burger and I will give you a custom wordlist !
             You can use wordlists, custom keywords, prefixes, suffixes.
             This is my first script in Python.
+
                             ⢀⣴⣶⣤⣤⣤⣀⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
                             ⢸⣿⣿⣿⣿⠇⠈⠉⠳⢦⣀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
                             ⠸⣿⡃⠀⠀⠀⠀⠀⠀⠀⠉⠳⣄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣀⣀⣠⣤⣤⣤⣀⣀⠀⠀
@@ -26,6 +27,7 @@ print("""
                             ⠀⠀⠀⠀⠀⡟⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢸⣄⣤⣄⡀⠀⢰⣿⢿⡄⠀⠀
                             ⠀⠀⠀⠀⠐⡇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣠⡇⠉⠉⠉⠙⠿⣅⡀⢧⡀⠀
                             ⠀⠀⠀⠀⠀⠙⠒⠦⠤⠤⠤⠤⠤⠤⠤⠤⠤⠤⠤⠴⠶⠖⠒⠛⠉⠀⠀⠀⠀⠀⠀  ⠾⠷⠀⠀⠀⠀⠀⠀⠀⠀
+
                             I hope you'll enjoy this little script !⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
                                         Twitter: @_f4ku
                                         Github: f4kuw
@@ -37,8 +39,7 @@ print("""
 parser = argparse.ArgumentParser(
     description=" Welcome to Dr. Scout help ! This little script generate wordlists with custom keywords. You can use wordlists files, or add custom keywords, suffixes, prefixes with the followings arguments ! Enjoy - f4Ku")
 
-default_wordlist = ["123", "1", "2", "3", "1111", "4444", "root", "root_", "admin", "admin_", "user", "user_", "@", "!",
-                    "?", "$", "*", ":", "^"]  # Default wordlist used if
+default_wordlist = ["123","1","2","3","1111","4444","root","root_","admin","admin_","user","user_","@","!","?","$","*",":","^"] #Default wordlist used if
 
 # Add prefix argument with:
 parser.add_argument('-p', '--prefix', nargs='+', type=str, default=default_wordlist,
@@ -62,6 +63,8 @@ output_file = args.output
 pre_file = args.prefile
 suf_file = args.sufile
 
+
+
 if not keyword:
     print("Error: You need to submit at least one keyword.")
     print('use a keyword with -k')
@@ -81,6 +84,8 @@ else:
             for line in f:
                 prefix.append(line.strip())
 
+    else:
+        print('You entered prefixes, those will be use, type --help for help.')
 if not suffix:
     if suf_file:
         print("You entered no suffix, but a wordfile")
@@ -88,13 +93,15 @@ if not suffix:
             for line in f:
                 suffix.append(line.strip())
     else:
-        print('You entered no suffix, and no wordlist, default will be use. Type --help for help.')
+        print('You entered no sufix, and no wordlist, default will be use. Type --help for help.')
 else:
     if suf_file:
         print("You entered both suffixes, and wordlist. Both will be add in the wordlist.")
-        with open(suf_file, "r") as f:
+        with open(pre_file, "r") as f:
             for line in f:
                 suffix.append(line.strip())
+    else:
+        print('You entered suffixes, those will be use, type --help for help.')
 
 print("\n\nGenerating wordlist. Please wait ! \ ")
 time.sleep(0.3)
