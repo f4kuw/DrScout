@@ -4,21 +4,13 @@
 
 
 
+## Dr Scout
 
 Dr Scout is a very simple wordlist generator.
 I'm not python developper just trying to learn some stuff.
 
 
-
-
-
-
-
-
-
-
-
-Usage:
+### Usage :
   example: You want to generate a custom wordlist because you lost your password and 
   remember it has something to do with your dog Jane and your birthday year which is 1967:
   
@@ -29,4 +21,3 @@ Usage:
   
   There's a default wordlist if you don't want to specify an external wordlist or words through arguments that contains few words/number/special characters.
   
-  f4ku
